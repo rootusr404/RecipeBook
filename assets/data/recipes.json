@@ -1,0 +1,62 @@
+[
+  {
+    "id": "r1",
+    "title": "Salade César",
+    "categoryId": "cat1",
+    "imageUrl": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9",
+    "prepTimeMinutes": 15,
+    "difficulty": "Facile",
+    "ingredients": ["Laitue", "Poulet", "Parmesan", "Croûtons"],
+    "description": "Une salade fraîche et rapide à préparer."
+  },
+  {
+    "id": "r2",
+    "title": "Pâtes Carbonara",
+    "categoryId": "cat2",
+    "imageUrl": "https://images.unsplash.com/photo-1612874742237-6526221588e3",
+    "prepTimeMinutes": 25,
+    "difficulty": "Moyen",
+    "ingredients": ["Pâtes", "Lardons", "Œufs", "Parmesan"],
+    "description": "Un classique italien crémeux et savoureux."
+  },
+  {
+    "id": "r3",
+    "title": "Tarte aux pommes",
+    "categoryId": "cat3",
+    "imageUrl": "https://images.unsplash.com/photo-1568571780765-9276ac8b75a2",
+    "prepTimeMinutes": 45,
+    "difficulty": "Moyen",
+    "ingredients": ["Pommes", "Pâte brisée", "Sucre", "Cannelle"],
+    "description": "Une tarte gourmande et facile à réussir."
+  },
+  {
+    "id": "r4",
+    "title": "Poulet rôti",
+    "categoryId": "cat2",
+    "imageUrl": "https://images.unsplash.com/photo-1598103442097-8b74394b95c6",
+    "prepTimeMinutes": 60,
+    "difficulty": "Facile",
+    "ingredients": ["Poulet entier", "Ail", "Thym", "Beurre"],
+    "description": "Un plat familial simple et réconfortant."
+  },
+  {
+    "id": "r5",
+    "title": "Soupe à l'oignon",
+    "categoryId": "cat1",
+    "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd",
+    "prepTimeMinutes": 40,
+    "difficulty": "Facile",
+    "ingredients": ["Oignons", "Bouillon", "Fromage", "Pain"],
+    "description": "Une entrée chaude et réconfortante."
+  },
+  {
+    "id": "r6",
+    "title": "Fondant au chocolat",
+    "categoryId": "cat3",
+    "imageUrl": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c",
+    "prepTimeMinutes": 30,
+    "difficulty": "Facile",
+    "ingredients": ["Chocolat", "Beurre", "Œufs", "Sucre", "Farine"],
+    "description": "Un dessert fondant irrésistible."
+  }
+]
