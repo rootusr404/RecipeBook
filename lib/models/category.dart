@@ -11,14 +11,16 @@ class Category {
     required this.icon,
   });
 
+  static IconData _resolveIcon(int codePoint) {
+    // ignore: non_const_argument_for_const_parameter
+    return IconData(codePoint, fontFamily: 'MaterialIcons');
+  }
+
   factory Category.fromJson(Map<String, dynamic> json) {
-    final int codePoint = json['iconCodePoint'] as int;
-   // ignore: non_const_argument_for_const_parameter
-final IconData resolvedIcon = IconData(codePoint, fontFamily: 'MaterialIcons');
     return Category(
       id: json['id'] as String,
       name: json['name'] as String,
-      icon: resolvedIcon,
+      icon: _resolveIcon(json['iconCodePoint'] as int),
     );
   }
 
