@@ -4,6 +4,10 @@ import '../models/recipe.dart';
 import 'repository.dart';
 
 class RecipeRepository implements Repository<Recipe> {
+  RecipeRepository._internal();
+  static final RecipeRepository _instance = RecipeRepository._internal();
+  factory RecipeRepository() => _instance;
+
   List<Recipe> _cache = [];
 
   Future<void> _ensureLoaded() async {

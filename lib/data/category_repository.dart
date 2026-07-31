@@ -4,6 +4,10 @@ import '../models/category.dart';
 import 'repository.dart';
 
 class CategoryRepository implements Repository<Category> {
+  CategoryRepository._internal();
+  static final CategoryRepository _instance = CategoryRepository._internal();
+  factory CategoryRepository() => _instance;
+
   List<Category> _cache = [];
 
   Future<void> _ensureLoaded() async {
