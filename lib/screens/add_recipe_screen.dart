@@ -15,6 +15,7 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
   final _titleCtrl = TextEditingController();
   final _timeCtrl = TextEditingController();
   final _ingredientsCtrl = TextEditingController();
+  final _imageUrlCtrl = TextEditingController();
   String _difficulty = 'Facile';
   String? _categoryId;
   List<Category> _categories = [];
@@ -60,6 +61,14 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
                 if (n == null || n <= 0) return 'Entrez un nombre valide';
                 return null;
               },
+            ),
+            const SizedBox(height: 12),
+            TextFormField(
+              controller: _imageUrlCtrl,
+              decoration: const InputDecoration(labelText: 'URL de l\'image'),
+              validator: (v) => (v == null || v.trim().isEmpty)
+                  ? 'Ajoutez une URL d\'image'
+                  : null,
             ),
             const SizedBox(height: 12),
             TextFormField(
@@ -109,7 +118,7 @@ class _AddRecipeScreenState extends State<AddRecipeScreen> {
       id: DateTime.now().microsecondsSinceEpoch.toString(),
       title: _titleCtrl.text.trim(),
       categoryId: _categoryId!,
-      imageUrl: '',
+      imageUrl: _imageUrlCtrl.text.trim(), 
       prepTimeMinutes: int.parse(_timeCtrl.text),
       difficulty: _difficulty,
       ingredients: _ingredientsCtrl.text.split(',').map((e) => e.trim()).toList(),

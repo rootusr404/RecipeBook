@@ -8,6 +8,7 @@ import '../widgets/recipe_card.dart';
 import '../widgets/search_bar_widget.dart';
 import '../utils/responsive.dart';
 import '../router/app_router.dart';
+import '../widgets/category_filter_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -73,34 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
               _applyFilters();
             }),
             const SizedBox(height: 12),
-            SizedBox(
-              height: 40,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  ChoiceChip(
-                    label: const Text('Toutes'),
-                    selected: _selectedCategoryId == null,
-                    onSelected: (_) {
-                      _selectedCategoryId = null;
-                      _applyFilters();
-                    },
-                  ),
-                  const SizedBox(width: 8),
-                  ..._categories.map((c) => Padding(
-                        padding: const EdgeInsets.only(right: 8),
-                        child: ChoiceChip(
-                          avatar: Icon(c.icon, size: 16),
-                          label: Text(c.name),
-                          selected: _selectedCategoryId == c.id,
-                          onSelected: (_) {
-                            _selectedCategoryId = c.id;
-                            _applyFilters();
-                          },
-                        ),
-                      )),
-                ],
-              ),
+            CategoryFilterBar(
+                categories: _categories,
+                selectedCategoryId: _selectedCategoryId,
+                onSelected: (id) {
+                  _selectedCategoryId = id;
+                  _applyFilters();
+                },
             ),
             const SizedBox(height: 12),
             Expanded(
